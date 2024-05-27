@@ -16,7 +16,6 @@ const UsuarioService = {
                 //Verifica se o usuario não foi excluido do banco
                 const dados = await getDoc(doc(db, 'users', retorno.user.uid));
                 console.log('A');
-                dados.exists(dados.exists())
                 if (dados.exists() && dados.data().admin) {
                     
                     return { sucesso: true , usuario: retorno.user}
